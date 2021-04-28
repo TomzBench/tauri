@@ -1,5 +1,38 @@
 # Changelog
 
+## \[1.0.0-beta-rc.5]
+
+- Simplify usage of app event and window label types. The following functions now
+  accept references the `Tag` can be borrowed as. This means an `&str` can now be
+  accepted for functions like `Window::emit`. This is a breaking change for the
+  following items, which now need to take a reference. Additionally, type inference
+  for `&"event".into()` will no longer work, but `&"event".to_string()` will. The
+  solution for this is to now just pass `"event"` because `Borrow<str>` is implemented
+  for the default event type `String`.
+
+- **Breaking:** `Window::emit` now accepts `Borrow` for the event.
+
+- **Breaking:** `Window::emit_others` now accepts `Borrow` for the event
+
+- **Breaking:** `Window::trigger` now accepts `Borrow` for the event.
+
+- **Breaking:** `Manager::emit_all` now accepts `Borrow` for the event.
+
+- **Breaking:** `Manager::emit_to` now accepts `Borrow` for both the event and window label.
+
+- **Breaking:** `Manager::trigger_global` now accepts `Borrow` for the event.
+
+- **Breaking:** `Manager::get_window` now accepts `Borrow` for the window label.
+
+- *(internal):* `trait tauri::runtime::tag::TagRef` helper for accepting tag references.
+  Any time you want to accept a tag reference, that trait will handle requiring the reference
+  to have all the necessary bounds, and generate errors when the exposed function doesn't
+  set a bound like `P::Event: Borrow<E>`.
+
+- [181e132](https://www.github.com/tauri-apps/tauri/commit/181e132aee895da23c1b63deb41a52e9910910cc) refactor(core): simplify usage of app event and window label types ([#1623](https://www.github.com/tauri-apps/tauri/pull/1623)) on 2021-04-27
+
+- [a755d23](https://www.github.com/tauri-apps/tauri/commit/a755d23e1bd0a3d6a2b6a85ff94feaf5a1a3a60d) refactor(core): more bounds for better errors from [#1623](https://www.github.com/tauri-apps/tauri/pull/1623) ([#1632](https://www.github.com/tauri-apps/tauri/pull/1632)) on 2021-04-27
+
 ## \[1.0.0-beta-rc.4]
 
 - Update `tauri-macros` and `tauri-utils` to `1.0.0-beta-rc.1`.
