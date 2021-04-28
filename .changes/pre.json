@@ -1,6 +1,7 @@
 {
   "tag": "beta-rc",
   "changes": [
+    ".changes/api-cjs-chunks.md",
     ".changes/api-package-fix.md",
     ".changes/appimage-icon.md",
     ".changes/beta-rc.md",
@@ -12,6 +13,7 @@
     ".changes/cta-remove-lodash.md",
     ".changes/cta-remove-tauri-from-vanilla.md",
     ".changes/cta-tauri-script.md",
+    ".changes/cta-testing-suite.md",
     ".changes/deb-custom-files.md",
     ".changes/deps-rc-detection.md",
     ".changes/dialog-default-path-file.md",
@@ -33,6 +35,7 @@
     ".changes/package-info-config.md",
     ".changes/plugin-initialization-result.md",
     ".changes/sidecar-fix.md",
+    ".changes/simplify-tag-label-usage.md",
     ".changes/supports-custom-template.md",
     ".changes/sync-metadata.md",
     ".changes/tauri-icon-cli.md",

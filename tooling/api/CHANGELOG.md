@@ -1,5 +1,10 @@
 # Changelog
 
+## \[1.0.0-beta-rc.4]
+
+- CommonJS chunks are now properly exported with `.cjs` extension
+  - [ddcd923](https://www.github.com/tauri-apps/tauri/commit/ddcd9233bd6f499aa7f22484d6c151b01778bc1b) fix(api): export commonjs chunks with `.cjs` extension, fix [#1625](https://www.github.com/tauri-apps/tauri/pull/1625) ([#1627](https://www.github.com/tauri-apps/tauri/pull/1627)) on 2021-04-26
+
 ## \[1.0.0-beta-rc.3]
 
 - Fixes distribution of the `@tauri-apps/api` package for older bundlers.
